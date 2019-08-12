@@ -1,0 +1,19 @@
+language: generic
+os:
+    - linux
+cache:
+    apt: true
+dist:
+    - xenial
+notifications:
+  email:
+    recipients:
+      - rbertra@us.ibm.com
+    on_success: change 
+    on_failure: always 
+before_install:
+    - sudo apt-get update 
+    - sudo apt-get install shellcheck
+script:
+    - shellcheck -e SC1090,SC2103 -s sh spec*.sh *.config
+
