@@ -33,7 +33,7 @@ set -a # All following variables are exported
 SPEC_CHOP_PATH=$( cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P )
 . "$SPEC_CHOP_PATH/spec-chop.config"
 
-. "$SPEC_CHOP_CHOPSTIX_SETUP_FILE >/dev/null 2>/dev/null" 
+. "$SPEC_CHOP_CHOPSTIX_SETUP_FILE" >/dev/null 2>/dev/null
 
 set -e # Finish right after a non-zero return command
 set -u # Finish right after a undefined expression is used
@@ -63,7 +63,8 @@ export CHOPSTIX_OPT_EVENTS=$SPEC_CHOP_SAMPLE_EVENT
 export CHOPSTIX_OPT_PERIOD=$SPEC_CHOP_SAMPLE_PERIOD
 export CHOPSTIX_OPT_TIMEOUT=$SPEC_CHOP_TIMEOUT
 
-chop sample "$SPEC_CHOP_COMMAND" >/dev/null 2>/dev/null
+# shellcheck disable=SC2086
+chop sample $SPEC_CHOP_COMMAND >/dev/null 2>/dev/null
 
 cp -f "$TEMP_DATA" "$SPEC_CHOP_DB_PATH"
 export CHOPSTIX_OPT_DATA="$SPEC_CHOP_DB_PATH"
