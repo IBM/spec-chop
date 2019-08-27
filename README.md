@@ -97,7 +97,7 @@ with the custom options:
 
     SPEC_CHOP_WRAPPER=spec-chop-wrapper-sample.sh SPEC_CHOP_SAMPLE_EVENT=cycles SPEC_CHOP_SAMPLE_PERIOD=1500000 spec-chop-runspec.sh <benchmark_name>
 
-### Sampling SPEC
+### Tracing SPEC
 
 Trace the execution of the default configured SPEC benchmark on LSF:
 
