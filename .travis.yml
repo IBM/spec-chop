@@ -1,14 +1,12 @@
-language: generic
+language: shell
+version: ~> 1.0
 os:
     - linux
 cache:
     apt: true
-dist:
-    - xenial
+dist: xenial
 notifications:
   email:
-    recipients:
-      - rbertra@us.ibm.com
     on_success: change 
     on_failure: always 
 before_install:
