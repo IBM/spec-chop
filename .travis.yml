@@ -5,13 +5,14 @@ os:
 cache:
     apt: true
 dist: xenial
+addons:
+    apt:
+        packages:
+            - shellcheck
 notifications:
   email:
     on_success: change 
     on_failure: always 
-before_install:
-    - sudo apt-get update 
-    - sudo apt-get install shellcheck
 script:
     - shellcheck -e SC1090,SC2103 -s sh spec*.sh *.config
 
