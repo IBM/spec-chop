@@ -14,5 +14,5 @@ notifications:
     on_success: change 
     on_failure: always 
 script:
-    - shellcheck -e SC1090,SC2103 -s sh spec*.sh *.config
+    - shellcheck -e SC1090,SC1091,SC2103 -s sh spec*.sh *.config
 
