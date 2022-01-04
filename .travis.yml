@@ -1,3 +1,7 @@
+# default arch
+arch: amd64
+##############
+
 language: shell
 version: ~> 1.0
 os:
